@@ -2,29 +2,29 @@ import java.util.Scanner;
 public class Calculator {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-        System.out.print("List of operations: add, subtract, multiply, divide, and alphabetize.");
-        String selection = input.nextLine();
-        String InputOption;
-        switch (selection) {
-            case "add":
-                InputOption="add";
-                break;
-            case "subtract":
-                InputOption="subtract";
-                break;
-            case "multiply":
-                InputOption="multiply";
-                break;
-            case "divide":
-                InputOption="divide";
-                break;
-            case "alphabetize":
-                InputOption="alphabetize";
-                break;
-            default:
-                InputOption="Try again";
-                System.exit(0);
-                break;
+        	System.out.print("List of operations: add, subtract, multiply, divide, and alphabetize.");
+        	String selection = input.nextLine();
+        	String InputOption;
+        	switch (selection) {
+            	case "add":
+                	InputOption="add";
+                	break;
+            	case "subtract":
+                	InputOption="subtract";
+                	break;
+            	case "multiply":
+                	InputOption="multiply";
+                	break;
+            	case "divide":
+                	InputOption="divide";
+                	break;
+            	case "alphabetize":
+                	InputOption="alphabetize";
+                	break;
+            	default:
+                	InputOption="Try again";
+                	System.exit(0);
+                	break;
 		}
 		System.out.println("Enter an operation: " + InputOption);
 		if (selection.equals("add") || selection.equals("subtract")) {
