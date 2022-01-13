@@ -1,0 +1,118 @@
+import java.util.Scanner;
+public class Calculator {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+        System.out.print("List of operations: add, subtract, multiply, divide, and alphabetize.");
+        String selection = input.nextLine();
+        String InputOption;
+        switch (selection) {
+            case "add":
+                InputOption="add";
+                break;
+            case "subtract":
+                InputOption="subtract";
+                break;
+            case "multiply":
+                InputOption="multiply";
+                break;
+            case "divide":
+                InputOption="divide";
+                break;
+            case "alphabetize":
+                InputOption="alphabetize";
+                break;
+            default:
+                InputOption="Try again";
+                System.exit(0);
+                break;
+		}
+		System.out.println("Enter an operation: " + InputOption);
+		if (selection.equals("add") || selection.equals("subtract")) {
+			
+			//runs code if initial scanner output is add/subtract
+
+			Scanner input_p1 = new Scanner(System.in);
+			Scanner input_p2 = new Scanner(System.in);
+			
+			//Creates scanner 1 and 2
+
+			System.out.print("Enter two intergers: ");
+			int input_parameter_1 = input_p1.nextInt();
+			int input_parameter_2 = input_p2.nextInt();
+
+			//Assign scanner integer output to a variable 
+
+			if (selection.equals("add")) {
+				int answer = input_parameter_1 + input_parameter_2;
+				System.out.println("Answer: " + answer);
+
+				//if "add" then add both variables together and print
+
+			}
+			else {
+			int answer = input_parameter_1 - input_parameter_2;
+			System.out.println("Answer: " + answer);
+
+			//if "subtract" then subtract input_parameter_2 from input_parameter_1
+
+			}
+		}
+		else if (selection.equals("multiply") || selection.equals("divide")) {
+			System.out.print("Enter two floats: ");
+			Scanner input_f1 = new Scanner(System.in);
+			Scanner input_f2 = new Scanner(System.in);	
+
+			//Creates scanner 1 and 2
+
+			float output_f1 = input_f1.nextFloat();
+			float output_f2 = input_f2.nextFloat();
+
+			//Assign scanner floats output to a variable 
+
+			if (selection.equals("multiply")) {
+				float answer = output_f1 * output_f2;
+				System.out.printf("Answer: %.2f",answer);	
+
+				//if "multiply" then multiply both floats together and print		
+			}
+			else {
+				if (output_f2 == 0) {
+					System.exit(0);
+				}
+				else {
+					float answer = output_f1 / output_f2;
+					System.out.printf("Answer: %.2f",answer);
+
+				//if "divide" then divide output_f1 by output_f2
+				}
+			}
+		}
+		else if (selection.equals("alphabetize")) {
+			System.out.print("Enter two Strings: ");
+			
+			Scanner str_input_1 = new Scanner(System.in);
+			Scanner str_input_2 = new Scanner(System.in);
+
+			//Creates two scanners
+
+			String str_output_1 = str_input_1.nextLine();
+			String str_output_2 = str_input_2.nextLine();
+
+			//Assigning input of scanners to two strings
+
+			String upper_str_1 = str_output_1.toUpperCase();
+			String upper_str_2 = str_output_2.toUpperCase();
+
+			int first_char = upper_str_1.charAt(0);
+			int second_char = upper_str_2.charAt(0);
+
+			if (second_char<first_char) {
+				System.out.println("Answer: "+str_output_2+" comes before "+str_output_1+" alphabetically.");
+			}
+			else {
+				System.out.println("Answer: "+str_output_1+" comes before "+str_output_2+" alphabetically.");
+			}
+	System.exit(0);
+			//Makes String all uppercase, assigning numeric values to put in alphabetical order with if statements
+		}
+	}	
